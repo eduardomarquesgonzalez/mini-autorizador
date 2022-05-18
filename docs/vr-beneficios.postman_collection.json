@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "e0557203-b3c0-4926-991c-036873c5a97e",
+		"name": "vr-beneficios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listarCartoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cartoes/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gerarCartao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\r\n\t\"numero\": \"6549873025634501\",\r\n\t\"nome\": \"Joana\",\r\n\t\"validade\": \"2022-01\",\r\n\t\"cvc\": \"123\",\r\n\t\"senha\": \"1234\",\r\n\t\"tipo\": 2\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cartoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transacoes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nome\": \"joana gonzalez\",\r\n\t\"numero\": \"6549873025634501\",\r\n\t\"cvc\": \"125\",\r\n\t\"senha\": \"1234\",\r\n\t\"tipo\": 2,\r\n\t\"valor\": \"10.0\"\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cartoes/transacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes",
+						"transacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterSaldoCartao",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cartoes/6549873025634501",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes",
+						"6549873025634501"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "excluirCartao",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cartoes/6549873025634501",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes",
+						"6549873025634501"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
