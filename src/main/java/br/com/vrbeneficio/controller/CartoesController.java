@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -99,7 +100,7 @@ public class CartoesController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	@GetMapping(value = "/listar")
 	public ResponseEntity<List<CartaoResponse>> listarCartoes() {
 		Iterable<Cartoes> iterable = cartoesService.listarCartoes();
 
@@ -116,8 +117,7 @@ public class CartoesController {
 	 * 
 	 * @return
 	 */
-	//@ResponseBody
-	//@RequestMapping(value = "/{numCartao}", method = RequestMethod.DELETE)
+	@ResponseBody
 	@DeleteMapping(value = "/{numCartao}")
 	public ResponseEntity<Response> excluir(@PathVariable Long numCartao) {
 		return cartoesService.excluir(numCartao);
