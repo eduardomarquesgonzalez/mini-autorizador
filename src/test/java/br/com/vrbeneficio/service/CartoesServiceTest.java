@@ -67,20 +67,18 @@ class CartoesServiceTest {
 		ResponseEntity<Response> findByNumeroCartao = service.findByNumeroCartao(NUMERO_CARTAO);
 		assertNotNull(findByNumeroCartao);
 		assertEquals(ResponseEntity.class, findByNumeroCartao.getClass());
-	
 
 	}
-	
+
 	@Test
 	void whenCompra() {
-		
+
 		when(repository.save(cartoes)).thenReturn(cartoes);
-		ResponseEntity<Response> response = service.comprar(request);	
+
+		ResponseEntity<Response> response = service.comprar(request);
 		assertNotNull(response);
 
 	}
-	
-	
 
 	private void startCartoes() {
 		cartoes = new Cartoes(NUMERO_CARTAO, NOME1, VALIDADE, CVC, SENHA, TIPO);
