@@ -5,9 +5,11 @@ import java.util.Locale;
 
 import br.com.vrbeneficio.enumerator.TiposBeneficioEnum;
 import br.com.vrbeneficio.modelo.Cartoes;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class CartaoResponse implements Response {
 	private String nomeCliente;
 	private Long numCartao;
