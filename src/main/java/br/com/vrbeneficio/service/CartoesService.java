@@ -44,7 +44,6 @@ public class CartoesService {
 				 * 
 				 */
 				Cartoes item = entidade.get();
-
 				item.validarSenha(cartao.getSenha()).validarSaldo(cartao.getValor());
 
 				Double saldo = item.getSaldo() - cartao.getValor();
